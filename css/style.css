@@ -1,11 +1,15 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-.navbar{
+body {
+    height: 100vh;
+}
+
+.navbar {
     background-color: #3941a0;
     padding: 10px 30px;
     display: flex;
@@ -13,59 +17,121 @@
     align-items: center;
     background: linear-gradient(90deg);
 }
-.logo{
+
+.logo {
     color: white;
     font-size: 24px;
     font-weight: bold;
 }
-.nav-links{
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
-.nav-links li a{
+
+.nav-links li a {
     color: white;
     text-decoration: none;
     padding: 8px 12px;
     transition: background-color 0.3s ease;
 }
-.nav-links li a:hover{
+
+.nav-links li a:hover {
     background-color: #34495e;
     border-radius: 5px;
 }
 
+.perfil {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 50px;
 
-.card{
-    background-color: #3941a0;
+}
+
+.perfil-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #444;
+}
+
+.info {
+    max-width: 600px;
+}
+
+.info h1 {
+    font-size: 3rem;
+    color: black;
+    margin: 10px 0;
+}
+
+.info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+.titulos{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10%;
+    flex-wrap: wrap;
+}
+
+.card {
     border-radius: 12px;
     width: 300px;
     padding: 20px;
-    box-shadow: 0 4px;
+    border: 1px solid rgb(57, 65, 160);
 }
-.card img {
+
+.card-imagem {
     width: 100%;
-    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
 }
+
 .card h3 {
-    color: white;
-    margin: 15px 0 10px;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 }
+
 .card p {
-    color: white;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
 }
+
 .card button {
+    cursor: pointer;
     margin: 10px;
-    padding: 4px;
-    display: flex;
-    align-items: center;
+    padding: 5px 10px;
+    background-color: #3941a0;
+    border-radius: 5px;
 }
-.card button a{
-    color: black;
+
+.card button a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-}
-
-
-img{
-    width: 100px;
 }
