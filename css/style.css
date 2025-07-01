@@ -44,23 +44,29 @@ body {
 
 .perfil {
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    padding: 60px 10%;
+    padding: 60px 0;
     gap: 50px;
-
+    flex-wrap: wrap;
 }
 
 .perfil-img img {
     width: 250px;
     height: 250px;
+    display: flex;
     object-fit: cover;
     border-radius: 50%;
     border: 8px solid #444;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .info {
     max-width: 600px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .info h1 {
@@ -72,6 +78,23 @@ body {
 .info p {
     margin: 10px 0;
     line-height: 1.6;
+}
+.download{
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 15px;
+    display: inline-block;
+    border: none;
+    background-color: #3941a0;
+    border-radius: 10px;
+}
+.download a{
+    text-decoration: none;
+    color: #fff;
+    gap: 20px;
+}
+.download:hover{
+    background-color: #45a049;
 }
 .titulos{
     text-align: center;
@@ -125,9 +148,10 @@ body {
 .card button {
     cursor: pointer;
     margin: 10px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     background-color: #3941a0;
     border-radius: 5px;
+    border: none;
 }
 
 .card button a {
