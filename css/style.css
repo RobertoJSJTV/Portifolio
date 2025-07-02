@@ -69,6 +69,17 @@ body {
     flex-wrap: wrap;
 }
 
+.typing {
+    overflow: hidden;
+    border-right: .15em solid #3941a0;
+    white-space: nowrap;
+    font-size: 1.9rem;
+    width: 0;
+    animation:
+        typing 3s steps(20, end) infinite,
+        blink .8s infinite;
+}
+
 .info h1 {
     font-size: 3rem;
     color: black;
@@ -79,7 +90,8 @@ body {
     margin: 10px 0;
     line-height: 1.6;
 }
-.download{
+
+.download {
     cursor: pointer;
     margin: 10px;
     padding: 10px 15px;
@@ -88,20 +100,24 @@ body {
     background-color: #3941a0;
     border-radius: 10px;
 }
-.download a{
+
+.download a {
     text-decoration: none;
     color: #fff;
     gap: 20px;
 }
-.download:hover{
+
+.download:hover {
     background-color: #45a049;
 }
-.titulos{
+
+.titulos {
     text-align: center;
     font-size: 25px;
     margin-top: 120px;
     margin-bottom: 60px;
 }
+
 .cards-container {
     display: flex;
     justify-content: center;
@@ -158,4 +174,14 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 100%
+    }
 }
