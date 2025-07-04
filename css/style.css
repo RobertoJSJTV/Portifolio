@@ -81,9 +81,27 @@ body {
     max-width: 600px;
     justify-content: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
+.social-icons a {
+    color: #3941a0;
+    font-size: 28px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #45a049;
+}
 .typing {
     overflow: hidden;
     border-right: .15em solid #3941a0;
@@ -108,12 +126,13 @@ body {
 
 .download {
     cursor: pointer;
-    margin: 10px;
+    margin: 15px;
     padding: 10px 15px;
     display: inline-block;
     border: none;
     background-color: #3941a0;
     border-radius: 10px;
+
 }
 
 .download a {
@@ -222,6 +241,28 @@ div {
     text-decoration: none;
     font-weight: bold;
 }
+.graduacao-container{
+    display: flex;
+    justify-content: center;
+    width: 0 auto;
+    padding: 0 0 5%;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.graduacao h3{
+    font-size: 1.27em;
+    font-weight: bold;
+}
+.graduacao h4{
+    font-size: 1.17em;
+}
+.graduacao p{
+    font-size: 1.13em;
+}
+.descri{
+    font-size: 1.1em;
+}
+
 
 @keyframes typing {
     from {
