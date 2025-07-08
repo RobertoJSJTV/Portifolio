@@ -163,7 +163,9 @@ body {
 
 
 }
-
+.epoca{
+    font-weight: bold;
+}
 div {
     display: block;
     unicode-bidi: isolate;
