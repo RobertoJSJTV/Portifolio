@@ -1,5 +1,7 @@
 # 💼 Portfólio Profissional - Roberto José da Silva Jr.
 
+![alt text](image.png)
+
 Bem-vindo ao meu portfólio! Este projeto foi criado com o objetivo de apresentar de forma clara, visualmente atraente e responsiva minhas **experiências profissionais**, **formação acadêmica** e **projetos desenvolvidos**.  
 
 Trata-se de uma aplicação **100% front-end** feita com **HTML5**, **CSS3** e **Font Awesome**, com foco em design limpo, responsividade e boa usabilidade.
@@ -55,11 +57,11 @@ Me chamo **Roberto José da Silva Jr.**, tenho 23 anos, sou formado em **Anális
 
 Entre em contato comigo através de:
 
-- 💼 LinkedIn
+- 💼 [LinkedIn](https://www.linkedin.com/in/robertojsjunior/)
 
-- 💻 GitHub
+- 💻 [GitHub](https://github.com/RobertoJSJTV)
 
-- 📱 WhatsApp
+- 📱 [WhatsApp](https://wa.me/11967863000)
 
-- 📸 Instagram
+- 📸 [Instagram](https://www.instagram.com/robertoo_sjr/)
 
