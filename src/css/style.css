@@ -137,7 +137,7 @@ body {
     border: none;
     background-color: #3941a0;
     border-radius: 10px;
-    transition: transform 0.2 ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .download a {
@@ -243,13 +243,30 @@ div {
     unicode-bidi: isolate;
 }
 
+.card .lingua {
+    display: inline-block;
+    margin-top: 1px;
+    border: 1px solid black;
+    color: #3941a0;
+    font-size: bold;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.7em;
+}
+
 .card button {
+    display: block;
     cursor: pointer;
     margin: 10px;
     padding: 10px 10px;
     background-color: #3941a0;
     border-radius: 5px;
     border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #292f6e;
 }
 
 .card button a {
@@ -311,25 +328,29 @@ div {
 .descri {
     font-size: 1.1em;
 }
-.footer-container{
-    background: linear-gradient(90deg, #4f58b7 ,#3941a0);
-     margin: 0;
-     padding-top: 3.7rem;
-     padding-bottom: 3.9rem;
-     display: flex;
-     justify-content: center;
-     text-align: center;
+
+.footer-container {
+    background: linear-gradient(90deg, #4f58b7, #3941a0);
+    margin: 0;
+    padding-top: 3.7rem;
+    padding-bottom: 3.9rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
-.footer h2{
+
+.footer h2 {
     color: #fff;
     padding-bottom: 5px;
 }
-.footer a{
+
+.footer a {
     font-size: 1.3rem;
     color: #aca7a7;
     align-content: center;
     text-decoration: none;
 }
+
 @keyframes typing {
     from {
         width: 0%
@@ -370,7 +391,8 @@ div {
         margin: 20px auto 0 auto;
         display: block;
     }
-    .footer h2{
+
+    .footer h2 {
         font-size: 1.8rem;
     }
 }
