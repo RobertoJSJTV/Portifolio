@@ -426,7 +426,7 @@ div {
         flex-direction: column !important;
         padding: 10px !important;
         gap:2px !important;
-        width: 50% !important;
+        width: 75% !important;
         max-width: 100% !important;
         box-sizing: border-box;
         border: none;
