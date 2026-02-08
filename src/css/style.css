@@ -254,25 +254,22 @@ div {
     font-size: 0.7em;
 }
 
-.card button {
+.card a {
     display: block;
     cursor: pointer;
     margin: 10px;
-    padding: 10px 10px;
+    padding: 10px;
     background-color: #3941a0;
     border-radius: 5px;
-    border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.card button:hover {
-    background-color: #292f6e;
-}
-
-.card button a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
+}
+
+.card a:hover {
+    background-color: #292f6e;
 }
 
 .graduacao-container {
@@ -425,7 +422,7 @@ div {
         display: flex !important;
         flex-direction: column !important;
         padding: 10px !important;
-        gap:2px !important;
+        gap: 2px !important;
         width: 75% !important;
         max-width: 100% !important;
         box-sizing: border-box;
@@ -448,6 +445,7 @@ div {
     .footer a {
         font-size: 1.0rem;
     }
+
     .footer a:hover {
         color: #45a049;
     }
