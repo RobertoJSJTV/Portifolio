@@ -8,7 +8,23 @@
 body {
     height: 100vh;
 }
-
+.escolha{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10%;
+}
+.img-idioma{
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+}
+.img-idioma1{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
 .navbar {
     background-color: #3941a0;
     padding: 10px 30px;
