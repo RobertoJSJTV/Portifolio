@@ -196,10 +196,13 @@ div {
 
 .cards-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     padding: 20px 10%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .card {
@@ -209,6 +212,8 @@ div {
     border: 1px solid rgb(57, 65, 160);
     overflow: hidden;
     transition: transform 0.3s ease;
+    flex: 0 0 300px;
+    scroll-snap-align: center;
 }
 
 .card:hover {
@@ -221,6 +226,51 @@ div {
     object-fit: cover;
     border: 2px solid black;
     border-radius: 5px;
+}
+
+/* Esconder scrollbar */
+.cards-container {
+    scrollbar-width: none; /* Firefox */
+}
+.cards-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Edge */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(57,65,160,0.95);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+.cards-container.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
 }
 
 .card h3 {
@@ -412,7 +462,6 @@ div {
         max-height: 300px;
         padding: 20px 0;
     }
-
     .navbar {
         position: relative;
         padding: 10px 20px;

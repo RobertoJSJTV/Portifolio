@@ -98,7 +98,9 @@
     </section>
     <section id="projetos">
         <h2 class="titulos">Projetos</h2>
-        <div class="cards-container">
+        <div class="slider">
+            <button class="slider-btn prev" aria-label="Anterior">‹</button>
+            <div class="cards-container">
             <div class="card">
                 <img class="card-imagem" src="src/img/image (8).png" alt="projeto Adimo Imoveis">
                 <h3>Projeto Adimo Imóveis</h3>
@@ -110,7 +112,7 @@
                 <p class="lingua">javascript</p>
                 <p class="lingua">bootstrap</p>
                 <a href="https://adimoimoveis.netlify.app/" target="_blank" rel="noopener noreferrer">Saiba
-                        mais</a>
+                    mais</a>
             </div>
             <div class="card">
                 <img class="card-imagem" src="src/img/image (4).png" alt="Imagem da loja ByteMinds">
@@ -124,8 +126,8 @@
                 <p class="lingua">mysql</p>
                 <p class="lingua">aws</p>
                 <p class="lingua">node.js</p>
-                <a href="https://byteminds.netlify.app/loja.html" target="_blank"
-                        rel="noopener noreferrer">Saiba mais</a>
+                <a href="https://byteminds.netlify.app/loja.html" target="_blank" rel="noopener noreferrer">Saiba
+                    mais</a>
             </div>
             <div class="card">
                 <img class="card-imagem" src="src/img/SilvaADV.jpeg" alt="Imagem o site da Silva&Associados">
@@ -133,8 +135,8 @@
                 <p>Um case de estudo Advocacional de uma empresa chamada Silva & Associados.</p>
                 <p class="lingua">html 5</p>
                 <p class="lingua">css</p>
-                <a href="https://robertojsjtv.github.io/ProjetoADV/" target="_blank"
-                        rel="noopener noreferrer">Saiba mais</a>
+                <a href="https://robertojsjtv.github.io/ProjetoADV/" target="_blank" rel="noopener noreferrer">Saiba
+                    mais</a>
             </div>
             <div class="card">
                 <img class="card-imagem" src="src/img/projetmuseu.jpeg"
@@ -145,18 +147,10 @@
                     do tempo, agendamentos e horários.</p>
                 <p class="lingua">html 5</p>
                 <p class="lingua">css</p>
-                <a href="https://robertojsjtv.github.io/ProjetoMuseu/" target="_blank"
-                        rel="noopener noreferrer">Saiba mais</a>
+                <a href="https://robertojsjtv.github.io/ProjetoMuseu/" target="_blank" rel="noopener noreferrer">Saiba
+                    mais</a>
             </div>
 
-            <!-- <div class="card">
-                <img class="card-imagem" src="src/img/em-construcao.gif" alt="Imagem de projeto em construção">
-                <h3>Projeto Management</h3>
-                <p>Um site para administrar fluxo de empresa com backend e frontend, com fluxos de fornecedores, produtos e estoque.</p>
-                <button><a href="https://github.com/RobertoJSJTV/ProjetoS" target="_blank">Saiba mais</a></button>
-            </div> -->
-        </div>
-        <div class="cards-container">
             <div class="card">
                 <img class="card-imagem" src="src/img/nexaPrime.png"
                     alt="Imagem de uma Agência de influencers criado por Roberto">
@@ -174,7 +168,19 @@
                 <a href="https://robertojsjtv.github.io/ProjetoAgencia/" target="_blank" rel="noopener noreferrer">Saiba
                     mais</a>
             </div>
+            
+            <!-- <div class="card">
+                <img class="card-imagem" src="src/img/em-construcao.gif" alt="Imagem de projeto em construção">
+                <h3>Projeto Management</h3>
+                <p>Um site para administrar fluxo de empresa com backend e frontend, com fluxos de fornecedores, produtos e estoque.</p>
+                <button><a href="https://github.com/RobertoJSJTV/ProjetoS" target="_blank">Saiba mais</a></button>
+            </div> -->
+            </div>
+            <button class="slider-btn next" aria-label="Próximo">›</button>
         </div>
+        <!-- <div class="cards-container">
+
+        </div> -->
     </section>
     <section id="graduacao">
         <h2 class="titulos">Formação acadêmica</h2>
@@ -211,6 +217,61 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('open');
         }
+
+        // Slider de cards: navegação por botões, arraste e teclado
+        (function () {
+            const container = document.querySelector('.cards-container');
+            const prev = document.querySelector('.slider-btn.prev');
+            const next = document.querySelector('.slider-btn.next');
+            if (!container || !prev || !next) return;
+
+            const card = container.querySelector('.card');
+            const gap = 20; // valor equivalente ao gap usado no CSS
+            const getCardWidth = () => (card ? card.offsetWidth + gap : container.clientWidth * 0.8);
+
+            prev.addEventListener('click', () => {
+                container.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+            });
+
+            next.addEventListener('click', () => {
+                container.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+            });
+
+            // Drag / swipe
+            let isDown = false;
+            let startX, scrollLeft;
+
+            container.addEventListener('pointerdown', (e) => {
+                isDown = true;
+                container.classList.add('dragging');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+                container.setPointerCapture(e.pointerId);
+            });
+
+            container.addEventListener('pointermove', (e) => {
+                if (!isDown) return;
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 1; // sensibilidade
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            const endDrag = (e) => {
+                isDown = false;
+                container.classList.remove('dragging');
+            };
+
+            container.addEventListener('pointerup', endDrag);
+            container.addEventListener('pointercancel', endDrag);
+            container.addEventListener('pointerleave', endDrag);
+
+            // Navegação por teclado (setas)
+            container.setAttribute('tabindex', '0');
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') next.click();
+                if (e.key === 'ArrowLeft') prev.click();
+            });
+        })();
     </script>
 </body>
 
